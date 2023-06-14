@@ -94,12 +94,12 @@ ON pedido.fk_id_cliente = cliente.id;
 ---UNION: Esse método pode não existir nas consultas de alguns Sistemas de Gerenciamento de Banco de Dados, como o MySQL. Assim, para apresentar os dados da tabela, precisamos informar que queremos os dados da tabela à esquerda, ou seja, da tabela que está em Left Join. Depois, juntamos os dados desta tabela com os dados da tabela Right Join. Por isso, temos o comando union, que une os dados de ambas as tabelas e os apresenta como resultado.
 select pedido.id AS pedido_id, cliente.id AS cliente_id 
 From pedido
-JOIN cliente
+LEFT JOIN cliente
 ON pedido.fk_id_cliente = cliente.id;
 UNION
 select pedido.id AS pedido_id, cliente.id AS cliente_id 
 From pedido
-JOIN cliente
+RIGHT JOIN cliente
 ON pedido.fk_id_cliente = cliente.id;
 
 ---FULL OUTER JOIN:(também conhecido como FULL JOIN ou OUTER JOIN) retorna todos os registros das duas tabelas sendo unidas, combinando os registros onde houver correspondência. Se não houver correspondência, os campos das tabelas não correspondentes serão preenchidos com NULL.
